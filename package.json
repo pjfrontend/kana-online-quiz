@@ -1,0 +1,90 @@
+{
+  "name": "kana-online-quiz",
+  "homepage": "https://pjfrontend.github.io/kana-online-quiz/",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/eslint-plugin": "^7.19.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.15",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "@types/react-router-dom": "^5.1.7",
+    "eslint-config-react-app": "^7.0.1",
+    "gh-pages": "^4.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prebuild": "rmdir /s /q docs",
+    "build": "react-scripts build",
+    "postbuild": "ren build docs",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx src/ --fix",
+    "coverage": "npm test -- --coverage .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|md|ts|tsx|graphql)\""
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "lint-staged": {
+    "*.+(js|jsx|tsx|ts|mjs)": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.+(json|css|md)": "prettier --write"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.8",
+    "env-cmd": "^10.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^6.0.0",
+    "is-ci": "^2.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.0.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.tsx"
+    ]
+  }
+}
